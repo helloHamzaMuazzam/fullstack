@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.flag-container {
+  position: relative;
+  width: 300px;
+  height: 180px; /* 5:3 flag ratio */
+  border: 1px solid #000;
+}
+
+.stripe {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 33.33%;
+}
+
+.red-top {
+  top: 0;
+  background-color: #ed2939; /* Austria red */
+}
+
+.white {
+  top: 33.33%;
+  background-color: #ffffff; /* White */
+}
+
+.red-bottom {
+  top: 66.66%;
+  background-color: #ed2939; /* Austria red */
+}
