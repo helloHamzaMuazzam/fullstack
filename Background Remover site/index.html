@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Remover Pro | Remove Image Backgrounds Instantly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>BG<span>Remover</span>Pro</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+           <div class="auth-buttons">
+    <button class="btn login" onclick="window.location.href='login.html'">Log In</button>
+    <button class="btn signup" onclick="window.location.href='login.html#signup'">Sign Up</button>
+</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Remove Background from Images <span>100% Automatically</span></h2>
+                    <p>Get perfect cutouts in 5 seconds with zero clicks. Powered by AI for professional results.</p>
+                    <div class="upload-container" id="uploadContainer">
+                        <div class="upload-area" id="uploadArea">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag & drop an image here or click to browse</p>
+                            <input type="file" id="fileInput" accept="image/*">
+                            <button class="btn upload-btn">Select Image</button>
+                        </div>
+                        <div class="supported-formats">
+                            <p>Supports: JPG, PNG, WEBP up to 10MB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="comparison-slider">
+                        <div class="image-wrapper">
+                            <img class="image-before" src="https://i.ibb.co/xtgn8htH/Untitled-design-3.png" alt="Before background removal">
+                            <div class="image-after-container">
+                                <img class="image-after" src="https://i.ibb.co/1J0R0wzY/tranparent-bg.png" alt="After background removal">
+                            </div>
+                        </div>
+                        <div class="resize-handle">
+                            <div class="handle-line"></div>
+                            <div class="handle-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                    <polyline points="9 18 3 12 9 6"></polyline>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                    <polyline points="15 18 21 12 15 6"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="slider-labels">
+                            <span class="label-before">Before</span>
+                            <span class="label-after">After</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="preview-section" id="previewSection" style="display: none;">
+            <div class="container">
+                <h2>Preview Your Result</h2>
+                <div class="preview-container">
+                    <div class="original">
+                        <h3>Original</h3>
+                        <div class="image-container">
+                            <img id="originalImage" src="" alt="Original image">
+                        </div>
+                    </div>
+                    <div class="result">
+                        <h3>Result</h3>
+                        <div class="image-container">
+                            <div class="loading-spinner" id="loadingSpinner">
+                                <div class="spinner"></div>
+                                <p>Processing your image...</p>
+                            </div>
+                            <img id="resultImage" src="" alt="Result image" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="btn download-btn" id="downloadBtn" disabled>
+                        <i class="fas fa-download"></i> Download Result
+                    </button>
+                    <button class="btn try-another-btn" id="tryAnotherBtn">
+                        <i class="fas fa-redo"></i> Try Another Image
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="how-it-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-upload"></i></div>
+                        <h3>Upload Image</h3>
+                        <p>Drag & drop your image or click to browse files from your device.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-magic"></i></div>
+                        <h3>AI Processing</h3>
+                        <p>Our advanced AI removes the background automatically in seconds.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-download"></i></div>
+                        <h3>Download Result</h3>
+                        <p>Get your image with transparent background in PNG format instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <h2>Simple, Transparent Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Free</h3>
+                        <div class="price">$0<span>/month</span></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 5 free images per month</li>
+                            <li><i class="fas fa-check"></i> Low resolution (0.25MP)</li>
+                            <li><i class="fas fa-check"></i> Watermark on results</li>
+                            <li><i class="fas fa-times"></i> No batch processing</li>
+                        </ul>
+                        <button class="btn">Get Started</button>
+                    </div>
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3>Pro</h3>
+                        <div class="price">$9.99<span>/month</span></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 100 images per month</li>
+                            <li><i class="fas fa-check"></i> High resolution (up to 10MP)</li>
+                            <li><i class="fas fa-check"></i> No watermark</li>
+                            <li><i class="fas fa-check"></i> Batch processing (up to 10 images)</li>
+                        </ul>
+                        <button class="btn">Get Started</button>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Business</h3>
+                        <div class="price">$29.99<span>/month</span></div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 500 images per month</li>
+                            <li><i class="fas fa-check"></i> Ultra high resolution (up to 25MP)</li>
+                            <li><i class="fas fa-check"></i> Priority processing</li>
+                            <li><i class="fas fa-check"></i> API access</li>
+                        </ul>
+                        <button class="btn">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What image formats are supported?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We support JPG, PNG, and WEBP formats. The output is always a PNG file with transparent background.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is there a file size limit?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, the maximum file size is 10MB for free users and 25MB for Pro/Business users.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How long does processing take?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Processing typically takes 3-5 seconds depending on image complexity and server load.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I remove background from multiple images at once?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, batch processing is available for Pro and Business subscribers (up to 10 images at once).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>BG<span>Remover</span>Pro</h2>
+                    <p>© 2023 BG Remover Pro. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h3>Product</h3>
+                        <ul>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#">API</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
